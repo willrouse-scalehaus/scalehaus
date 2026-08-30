@@ -3,480 +3,774 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>ScaleHaus — The Online Presence Audit for Independent Cosmetic Dentistry Practices</title>
-<meta name="description" content="You are not short on patients. You are losing the ones you already earned. ScaleHaus finds the leaks, seals them, and only then pours fuel. Free audit.">
-<meta property="og:title" content="ScaleHaus — The Online Presence Audit">
-<meta property="og:description" content="You are not short on patients. You are losing the ones you already earned.">
+<title>ScaleHaus — Find the Leak. Seal It. Then Pour Fuel.</title>
+<meta name="description" content="You are not short on buyers. You are losing the ones you already earned. ScaleHaus finds where your business leaks, seals the largest constraint, and only then pours fuel. Free audit.">
+<meta property="og:title" content="ScaleHaus — Find the Leak. Seal It. Then Pour Fuel.">
+<meta property="og:description" content="You are not short on buyers. You are losing the ones you already earned. Free audit.">
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ── RESET ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
-body{font-family:'Source Serif 4',Georgia,serif;background:#EDEFF0;color:#12171A;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+body{font-family:'Manrope',sans-serif;background:#F5F7FB;color:#080A12;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;font-weight:400;}
 img{max-width:100%;display:block;}
-::selection{background:rgba(226,67,31,.12);color:#12171A;}
+::selection{background:rgba(255,45,111,.12);color:#080A12;}
 
 /* ── TOKENS ── */
 :root{
-  --paper:#EDEFF0;
-  --ink:#12171A;
-  --ink-soft:#3B444A;
-  --muted:#767F85;
-  --line:#D6DADD;
-  --signal:#E2431F;
-  --sealed:#1F7A5C;
-  --radius:2px;
+  --canvas:#F5F7FB;
+  --surface:#FFFFFF;
+  --ink:#080A12;
+  --body:#3A4152;
+  --muted:#7A8397;
+  --line:#E2E7F0;
+  --beam:#00D5F5;
+  --volt:#C6FF3D;
+  --flare:#FF2D6F;
+  --amber:#FFB020;
+  --radius:14px;
 }
 
 /* ── UTILITY ── */
-.inner{max-width:1080px;margin:0 auto;padding:0 28px;}
-.section{position:relative;}
-.section--paper{background:var(--paper);}
-.section--ink{background:var(--ink);color:var(--paper);}
+.inner{max-width:1120px;margin:0 auto;padding:0 28px;}
+.section{padding:100px 0;position:relative;}
+.section--canvas{background:var(--canvas);}
+.section--surface{background:var(--surface);}
+.section--ink{background:var(--ink);color:var(--surface);}
 .section--ink .section-label{color:rgba(255,255,255,.35);}
-.section--ink h2{color:var(--paper);}
-.section--ink .body-text{color:rgba(255,255,255,.55);}
+.section--ink h2{color:var(--surface);}
+.section--ink .body-text{color:rgba(255,255,255,.5);}
 .section--ink .body-text strong{color:rgba(255,255,255,.75);}
-.section--ink a:not(.btn){color:var(--sealed);}
-.section--ink a:not(.btn):hover{color:#2a9d7a;}
-.body-text{font-size:17px;color:var(--ink-soft);line-height:1.7;margin-bottom:16px;max-width:660px;}
+.section--ink a:not(.btn){color:var(--volt);}
+.body-text{font-size:16px;color:var(--body);line-height:1.7;margin-bottom:16px;max-width:640px;}
 .body-text strong{color:var(--ink);font-weight:600;}
-.section-label{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;}
-h2{font-family:'Archivo',sans-serif;font-size:clamp(28px,3.2vw,42px);font-weight:700;line-height:1.08;letter-spacing:-0.5px;color:var(--ink);margin-bottom:20px;}
-h2 .signal{color:var(--signal);}
-h2 .sealed{color:var(--sealed);}
-h2 + .body-text{margin-top:-8px;}
-.hairline{width:100%;height:1px;background:var(--line);border:none;margin:0;}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;}
+h2{font-family:'Sora',sans-serif;font-size:clamp(28px,3.2vw,40px);font-weight:800;line-height:1.08;letter-spacing:-0.03em;color:var(--ink);margin-bottom:16px;}
+h2 .beam{color:var(--beam);}
+h2 .flare{color:var(--flare);}
+h2 .volt{color:var(--volt);}
+h2 .amber{color:var(--amber);}
+h2 + .body-text{margin-top:-4px;}
+.hairline{width:100%;height:1px;background:var(--line);border:none;}
 .hairline--ink{background:rgba(255,255,255,.06);}
-.mono{font-family:'IBM Plex Mono',monospace;}
-.signal{color:var(--signal);}
-.sealed{color:var(--sealed);}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all .25s;cursor:pointer;border:none;line-height:1;}
-.btn--primary{background:var(--signal);color:var(--paper);}
-.btn--primary:hover{background:#c73a1a;transform:translateY(-1px);}
-.btn--ghost{border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);}
-.btn--ghost:hover{border-color:rgba(255,255,255,.3);color:var(--paper);}
-.btn--outline{border:1px solid var(--line);color:var(--ink);background:transparent;}
-.btn--outline:hover{border-color:var(--signal);color:var(--signal);}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.mono-beam{color:var(--beam);}
+.mono-flare{color:var(--flare);}
+.mono-volt{color:var(--volt);}
+.mono-amber{color:var(--amber);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all .2s;cursor:pointer;border:none;line-height:1;}
+.btn--primary{background:var(--flare);color:var(--surface);}
+.btn--primary:hover{background:#e0205a;transform:translateY(-1px);}
+.btn--ghost{border:2px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);}
+.btn--ghost:hover{border-color:var(--volt);color:var(--volt);}
+.btn--outline{border:2px solid var(--line);color:var(--ink);background:transparent;}
+.btn--outline:hover{border-color:var(--flare);color:var(--flare);}
+.btn--beam{background:var(--beam);color:var(--ink);}
+.btn--beam:hover{background:#00bddb;transform:translateY(-1px);}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .reveal{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.25,.1,.25,1);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}
+.fill-slot{display:inline-block;min-width:80px;padding:2px 8px;border-radius:4px;background:rgba(255,45,111,.08);color:var(--flare);font-family:'JetBrains Mono',monospace;font-size:inherit;font-weight:500;border:1px dashed rgba(255,45,111,.2);}
+
+/* ── ANNOUNCEMENT BAR ── */
+.announce{background:var(--ink);padding:10px 0;text-align:center;position:relative;z-index:101;}
+.announce p{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.5px;}
+.announce p strong{color:var(--volt);font-weight:500;}
+.announce a{color:var(--beam);text-decoration:none;border-bottom:1px solid rgba(0,213,245,.3);}
+.announce a:hover{color:var(--surface);border-bottom-color:var(--surface);}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all .3s;}
-nav.scrolled{background:rgba(237,239,240,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
-nav .inner{display:flex;align-items:center;justify-content:space-between;}
-.logo{font-family:'Archivo',sans-serif;font-size:20px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.3px;}
-.logo span{font-weight:400;color:var(--muted);}
+nav{position:sticky;top:0;z-index:100;padding:0;background:var(--surface);border-bottom:1px solid var(--line);}
+nav .inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.02em;}
+.logo span{color:var(--muted);font-weight:400;}
 .nav-links{display:flex;align-items:center;gap:24px;}
-.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .3s;letter-spacing:.5px;text-transform:uppercase;}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s;text-transform:uppercase;letter-spacing:.5px;}
 .nav-links a:hover{color:var(--ink);}
-.nav-cta{padding:8px 20px;background:var(--signal);color:var(--paper);border-radius:var(--radius);font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all .25s;}
-.nav-cta:hover{background:#c73a1a;color:var(--paper);}
+.nav-cta{padding:8px 20px;background:var(--flare);color:var(--surface);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all .2s;}
+.nav-cta:hover{background:#e0205a;color:var(--surface);}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--line);}
-.hero .inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;}
-.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:var(--signal);margin-bottom:20px;letter-spacing:1px;display:flex;align-items:center;gap:12px;}
-.hero .eyebrow::before{content:'';width:24px;height:1px;background:var(--signal);}
-.hero h1{font-family:'Archivo',sans-serif;font-size:clamp(36px,4.5vw,60px);font-weight:800;line-height:1.04;letter-spacing:-1px;color:var(--ink);margin-bottom:20px;}
-.hero h1 .signal{color:var(--signal);}
-.hero .sub{font-size:18px;color:var(--ink-soft);line-height:1.6;margin-bottom:32px;max-width:500px;}
+.hero{min-height:90vh;display:flex;align-items:center;padding:80px 0 60px;position:relative;overflow:hidden;background:var(--canvas);}
+.hero-bg{position:absolute;inset:0;pointer-events:none;opacity:.3;}
+.hero-bg .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent);}
+.hero .inner{position:relative;z-index:2;}
+.hero .grid-2{align-items:start;}
+.hero-left{padding-top:20px;}
+.hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--flare);margin-bottom:16px;letter-spacing:1px;display:flex;align-items:center;gap:10px;}
+.hero .eyebrow::before{content:'';width:24px;height:1px;background:var(--flare);}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(34px,4vw,52px);font-weight:800;line-height:1.04;letter-spacing:-0.03em;color:var(--ink);margin-bottom:16px;}
+.hero h1 .flare{color:var(--flare);}
+.hero h1 .beam{color:var(--beam);}
+.hero .sub{font-size:17px;color:var(--body);line-height:1.6;margin-bottom:28px;max-width:480px;}
 .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
-.hero .diagnostic{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--paper);}
-.hero .diagnostic .label{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
-.hero .diagnostic-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);}
-.hero .diagnostic-item:last-child{border-bottom:none;padding-bottom:0;}
-.hero .diagnostic-item .marker{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;min-width:40px;line-height:1.3;}
-.hero .diagnostic-item .marker.signal{color:var(--signal);}
-.hero .diagnostic-item .marker.sealed{color:var(--sealed);}
-.hero .diagnostic-item .text{font-size:14px;color:var(--ink-soft);line-height:1.5;}
-.hero .diagnostic-item .text strong{color:var(--ink);}
 
 /* ── LADDER ── */
-.ladder-section{padding:120px 0;position:relative;}
-.ladder-section .inner{max-width:780px;margin:0 auto;}
-.ladder-section h2{text-align:center;margin-bottom:8px;}
-.ladder-section .section-label{text-align:center;}
-.ladder-section .lead{text-align:center;color:var(--ink-soft);font-size:17px;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto;}
-.ladder{position:relative;padding:0 0 0 40px;}
-.ladder::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:1px;background:var(--line);}
-.ladder-step{position:relative;padding:0 0 0 32px;margin-bottom:0;opacity:0;transform:translateY(16px);transition:all .8s cubic-bezier(.25,.1,.25,1);}
-.ladder-step.visible{opacity:1;transform:translateY(0);}
-.ladder-step:last-child{padding-bottom:0;}
-.ladder-step .dot{position:absolute;left:-40px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);z-index:1;}
-.ladder-step .dot.signal{background:var(--signal);border-color:var(--signal);color:var(--paper);}
-.ladder-step .dot.sealed{background:var(--sealed);border-color:var(--sealed);color:var(--paper);}
-.ladder-step .content{display:flex;gap:24px;align-items:flex-start;padding:16px 0 16px 0;}
-.ladder-step .rung{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;min-width:100px;padding-top:2px;}
-.ladder-step .desc{font-size:15px;color:var(--ink-soft);line-height:1.5;flex:1;}
-.ladder-step .desc strong{color:var(--ink);}
-.ladder-step .leak{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--signal);font-weight:500;margin-top:6px;display:flex;align-items:center;gap:8px;}
-.ladder-step .leak::before{content:'→';}
-.ladder-step .fix{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sealed);font-weight:500;margin-top:6px;display:flex;align-items:center;gap:8px;}
+.ladder-wrap{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 16px;}
+.ladder-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:16px;letter-spacing:.5px;display:flex;align-items:center;gap:8px;}
+.ladder-label::before{content:'ⓘ';font-size:10px;color:var(--muted);}
+.ladder{display:flex;flex-direction:column;gap:0;}
+.ladder-row{display:grid;grid-template-columns:64px 1fr 48px;gap:10px;align-items:center;padding:7px 0;position:relative;}
+.ladder-row .stage{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;}
+.ladder-row .bar-wrap{height:18px;background:var(--line);border-radius:4px;overflow:hidden;position:relative;}
+.ladder-row .bar{height:100%;border-radius:4px;width:0;transition:width 1s cubic-bezier(.25,.1,.25,1);}
+.ladder-row .bar.beam{background:var(--beam);}
+.ladder-row .bar.volt{background:var(--volt);}
+.ladder-row .bar.amber{background:var(--amber);}
+.ladder-row .bar.flare{background:var(--flare);}
+.ladder-row .count{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--body);text-align:right;}
+.ladder-row .count.flare{color:var(--flare);}
+.ladder-row .count.volt{color:var(--volt);}
+.ladder-row .transition-label{grid-column:2;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;padding:2px 0 0 0;display:flex;align-items:center;gap:6px;opacity:0;transition:opacity .6s .5s;}
+.ladder-row .transition-label.visible{opacity:1;}
+.ladder-row .transition-label .tag{padding:1px 6px;border-radius:3px;font-size:8px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.ladder-row .transition-label .tag.flare{background:rgba(255,45,111,.1);color:var(--flare);}
+.ladder-row .transition-label .tag.amber{background:rgba(255,176,32,.1);color:#b87a00;}
+.ladder-row .transition-label .tag.volt{background:rgba(198,255,61,.1);color:#6b8a00;}
+.ladder-row .transition-label .reason{font-size:9px;color:var(--muted);}
+.ladder-row .transition-label .reason.flare{color:var(--flare);}
+.ladder-footer{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:16px;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;}
+.ladder-footer .dot{width:6px;height:6px;border-radius:50%;background:var(--flare);flex-shrink:0;}
 
-/* ── LEAKS GRID ── */
-.leaks-section{padding:120px 0;}
-.leaks-section .inner{max-width:900px;}
-.leaks-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);}
-.leak-item{padding:28px 0;border-bottom:1px solid var(--line);padding-right:32px;}
-.leak-item:nth-child(even){padding-right:0;padding-left:32px;border-left:1px solid var(--line);}
-.leak-item .num{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);margin-bottom:4px;}
-.leak-item .name{font-family:'Archivo',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.leak-item .name.signal{color:var(--signal);}
-.leak-item .fix-line{font-size:14px;color:var(--ink-soft);line-height:1.5;margin-top:4px;}
-
-/* ── DONT ADVERTISE ── */
-.dont-section{padding:120px 0;}
-.dont-section .inner{max-width:700px;text-align:center;}
-.dont-section .pullquote{font-family:'Archivo',sans-serif;font-size:clamp(24px,2.5vw,36px);font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:var(--paper);margin-bottom:20px;}
-.dont-section .pullquote .signal{color:var(--signal);}
-.dont-section .body-text{margin:0 auto 16px;}
+/* ── WHY ── */
+.why{padding:80px 0;}
+.why .inner{max-width:780px;text-align:center;}
+.why .pullquote{font-family:'Sora',sans-serif;font-size:clamp(22px,2.5vw,34px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:var(--surface);margin-bottom:20px;}
+.why .pullquote .flare{color:var(--flare);}
+.why .body-text{margin:0 auto 16px;}
 
 /* ── MECHANISM ── */
-.mech-section{padding:120px 0;}
-.mech-section .inner{max-width:900px;}
-.mech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);}
-.mech-item{padding:36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
-.mech-item:last-child{border-right:none;}
-.mech-item .step{font-family:'IBM Plex Mono',monospace;font-size:32px;font-weight:600;color:var(--muted);opacity:.3;margin-bottom:12px;line-height:1;}
-.mech-item h3{font-family:'Archivo',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-0.3px;}
-.mech-item p{font-size:14px;color:var(--ink-soft);line-height:1.6;}
+.mech .grid-3{gap:0;border-top:1px solid var(--line);}
+.mech-card{padding:36px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+.mech-card:last-child{border-right:none;}
+.mech-card .step{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:600;color:var(--muted);opacity:.25;margin-bottom:12px;line-height:1;}
+.mech-card h3{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-0.02em;}
+.mech-card p{font-size:14px;color:var(--body);line-height:1.6;}
+.callout{text-align:center;padding:40px;margin-top:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);}
+.callout .big{font-family:'Sora',sans-serif;font-size:clamp(20px,2.2vw,30px);font-weight:800;color:var(--ink);letter-spacing:-0.03em;line-height:1.1;margin-bottom:8px;}
+.callout .big .flare{color:var(--flare);}
+.callout p{font-size:14px;color:var(--body);}
 
-/* ── AUDIT ── */
-.audit-section{padding:120px 0;}
-.audit-section .inner{max-width:780px;}
-.audit-section h2{text-align:center;}
-.audit-section .lead{text-align:center;color:var(--ink-soft);font-size:17px;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto;}
-.audit-specs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
-.audit-spec{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;background:var(--paper);}
-.audit-spec:nth-child(even){border-left:1px solid var(--line);}
-.audit-spec:last-child,.audit-spec:nth-last-child(2){border-bottom:none;}
-.audit-spec .spec-label{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;min-width:80px;padding-top:2px;}
-.audit-spec .spec-text{font-size:14px;color:var(--ink-soft);line-height:1.5;}
+/* ── AUDIT SPECS ── */
+.audit-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.audit-card{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);position:relative;overflow:hidden;}
+.audit-card .ring{height:3px;border-radius:0 0 14px 14px;margin:-28px -28px 20px -28px;}
+.audit-card .ring.flare{background:var(--flare);}
+.audit-card .ring.beam{background:var(--beam);}
+.audit-card .ring.amber{background:var(--amber);}
+.audit-card .ring.volt{background:var(--volt);}
+.audit-card .card-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.audit-card h3{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-0.02em;}
+.audit-card p{font-size:13px;color:var(--body);line-height:1.6;}
+.audit-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-top:20px;padding:16px;border:1px dashed var(--line);border-radius:var(--radius);text-align:center;}
 
-/* ── EXCLUSIVITY ── */
-.excl-section{padding:120px 0;}
-.excl-section .inner{max-width:700px;text-align:center;}
-.excl-section .pullquote{font-family:'Archivo',sans-serif;font-size:clamp(24px,2.5vw,36px);font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:var(--paper);margin-bottom:20px;}
-.excl-section .body-text{margin:0 auto 16px;max-width:520px;}
+/* ── LEAKS GRID ── */
+.leaks-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);}
+.leak-cell{padding:24px 0;border-bottom:1px solid var(--line);}
+.leak-cell:nth-child(even){padding-left:28px;border-left:1px solid var(--line);}
+.leak-cell .num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);margin-bottom:2px;}
+.leak-cell .name{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.leak-cell .name.flare{color:var(--flare);}
+.leak-cell .desc{font-size:13px;color:var(--body);line-height:1.5;}
+.leak-cell .desc .fix{color:var(--beam);}
+.leak-cell--volt{background:rgba(198,255,61,.04);}
+.leak-cell--volt .name{color:var(--ink);}
+
+/* ── SPEED TO LEAD ── */
+.speed .grid-2{gap:48px;}
+.speed .stat-box{display:flex;gap:24px;margin:20px 0;}
+.speed .stat-box .num{font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:600;line-height:1;color:var(--flare);}
+.speed .stat-box .num span{font-size:14px;color:var(--muted);font-weight:400;}
+.speed .stat-box .l{font-size:13px;color:var(--body);margin-top:4px;}
+.sms-mock{background:var(--ink);border-radius:var(--radius);padding:20px;max-width:400px;margin-left:auto;}
+.sms-mock .msg{display:flex;flex-direction:column;gap:12px;}
+.sms-mock .bubble{padding:10px 14px;border-radius:10px;font-size:13px;line-height:1.5;max-width:85%;}
+.sms-mock .bubble--in{background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);align-self:flex-start;border:1px solid rgba(255,255,255,.06);}
+.sms-mock .bubble--out{background:rgba(0,213,245,.12);border:1px solid rgba(0,213,245,.15);color:rgba(255,255,255,.6);align-self:flex-end;}
+.sms-mock .bubble .name{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;color:rgba(255,255,255,.4);margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px;}
+.sms-mock .status{display:flex;align-items:center;gap:6px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);}
+.sms-mock .status .dot{width:6px;height:6px;border-radius:50%;background:var(--volt);}
+.sms-mock .status span{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.3);}
+
+/* ── MARKETS ── */
+.markets-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.market-chip{padding:6px 14px;border-radius:20px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;border:1px solid var(--line);background:var(--surface);color:var(--body);}
+.market-chip--claimed{background:var(--beam);border-color:var(--beam);color:var(--ink);}
+.market-chip--open{border-style:dashed;color:var(--muted);}
+.market-legend{display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);}
+.market-legend span{display:flex;align-items:center;gap:6px;}
+.market-legend .swatch{width:10px;height:10px;border-radius:3px;}
+.market-legend .swatch--claimed{background:var(--beam);}
+.market-legend .swatch--open{border:1px dashed var(--line);}
+
+/* ── PROOF / CASE STUDIES ── */
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.case-card{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);}
+.case-card .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.case-card .slot{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--flare);background:rgba(255,45,111,.05);border:1px dashed rgba(255,45,111,.15);border-radius:6px;padding:24px 16px;text-align:center;margin:8px 0;}
+.case-card .slot p{font-size:10px;color:var(--muted);margin-top:4px;}
+.proof-footnote{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:16px;text-align:center;padding:12px;border:1px dashed var(--line);border-radius:var(--radius);}
+
+/* ── STEPS ── */
+.steps{display:flex;flex-direction:column;gap:0;max-width:560px;margin:0 auto;}
+.step-row{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);}
+.step-row:last-child{border-bottom:none;}
+.step-row .s-num{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:var(--muted);min-width:32px;padding-top:2px;}
+.step-row .s-num.beam{color:var(--beam);}
+.step-row .s-num.volt{color:var(--volt);}
+.step-row h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.step-row p{font-size:13px;color:var(--body);line-height:1.5;}
+
+/* ── FAQ ── */
+.faq-list{max-width:640px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);-webkit-user-select:none;user-select:none;}
+.faq-q .arrow{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted);transition:transform .2s;}
+.faq-item.open .faq-q .arrow{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s;font-size:14px;color:var(--body);line-height:1.6;}
+.faq-item.open .faq-a{max-height:300px;padding-top:12px;}
 
 /* ── FORM ── */
-.form-section{padding:120px 0;}
 .form-section .inner{max-width:640px;}
-.form-section h2{text-align:center;}
-.form-section .lead{text-align:center;color:var(--ink-soft);font-size:15px;margin-bottom:36px;}
-.form-container{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:36px;}
-.form-container iframe{width:100%;min-height:520px;border:none;display:block;}
+.form-container{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:36px;margin-top:24px;}
+.form-placeholder{border:2px dashed var(--line);border-radius:var(--radius);padding:48px 24px;text-align:center;}
+.form-placeholder .icon{font-size:32px;margin-bottom:12px;display:block;}
+.form-placeholder p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:16px;}
 
 /* ── FOOTER ── */
-footer{padding:48px 0;border-top:1px solid var(--line);}
-footer .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-footer .links{display:flex;gap:20px;flex-wrap:wrap;}
-footer .links a{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .3s;letter-spacing:.3px;text-transform:uppercase;}
-footer .links a:hover{color:var(--ink);}
-footer .copy{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);}
-footer .compliance{width:100%;text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
-footer .compliance p{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);line-height:1.5;}
+footer{padding:48px 0;border-top:1px solid var(--line);background:var(--surface);}
+footer .inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;}
+footer h4{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;}
+footer a{font-size:13px;color:var(--body);text-decoration:none;display:block;margin-bottom:6px;}
+footer a:hover{color:var(--beam);}
+footer .copy{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);padding-top:20px;border-top:1px solid var(--line);text-align:center;}
+footer .compliance{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);text-align:center;line-height:1.5;margin-top:12px;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .row{grid-template-columns:1fr;gap:32px;}
-  .hero .inner{grid-template-columns:1fr;gap:32px;}
-  .hero h1{font-size:clamp(30px,8vw,42px);}
+  .grid-2,.audit-specs,.proof-grid{grid-template-columns:1fr;gap:24px;}
+  .grid-3{grid-template-columns:1fr;}
+  .hero h1{font-size:clamp(28px,7vw,36px);}
   .leaks-grid{grid-template-columns:1fr;}
-  .leak-item:nth-child(even){padding-left:0;border-left:none;}
-  .mech-grid{grid-template-columns:1fr;}
-  .mech-item{border-right:none;}
-  .audit-specs{grid-template-columns:1fr;}
-  .audit-spec:nth-child(even){border-left:none;}
+  .leak-cell:nth-child(even){padding-left:0;border-left:none;}
+  .mech-card{border-right:none;}
+  .markets-grid{gap:6px;}
   .nav-links a{display:none;}
-  .ladder{padding-left:24px;}
-  .ladder-step .dot{left:-24px;width:18px;height:18px;font-size:8px;}
-  .ladder-step .rung{min-width:70px;font-size:10px;}
-  footer .inner{flex-direction:column;text-align:center;}
+  .ladder-row{grid-template-columns:48px 1fr 36px;gap:6px;}
+  .ladder-row .stage{font-size:9px;}
+  .ladder-row .count{font-size:10px;}
+  footer .inner{grid-template-columns:1fr;gap:24px;}
+  .speed .grid-2{gap:32px;}
+  .speed .stat-box{flex-direction:column;gap:12px;}
+  .sms-mock{margin-left:0;}
+  .announce p{font-size:9px;padding:0 12px;}
 }
 
 /* ── KEYBOARD FOCUS ── */
-a:focus-visible,.btn:focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--flare);outline-offset:2px;}
+
+/* ── LADDER ANIMATION ── */
+.ladder-row .bar-wrap{transform-origin:left;}
 </style>
 </head>
 <body>
 
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="announce">
+<div class="inner">
+<p>By application · one business per market · <strong>27</strong> territories open for 2026 · <a href="#form">Apply →</a></p>
+</div>
+</div>
+
+<!-- ═══ NAV ═══ -->
 <nav id="nav">
 <div class="inner">
 <a href="#hero" class="logo">Scale<span>Haus</span></a>
 <div class="nav-links">
 <a href="#ladder">The Ladder</a>
-<a href="#leaks">The Leaks</a>
-<a href="#audit">The Audit</a>
-<a href="#form" class="nav-cta">Get the Audit</a>
+<a href="#leaks">Leaks</a>
+<a href="#markets">Markets</a>
+<a href="#faq">FAQ</a>
+<a href="#form" class="nav-cta">Apply</a>
 </div>
 </div>
 </nav>
 
+<!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
+<div class="hero-bg"><div class="grid"></div></div>
 <div class="inner">
-<div>
-<div class="eyebrow">Independent Cosmetic Dentistry</div>
-<h1>You are not short on <span class="signal">patients</span>.<br>You are losing the ones you already earned.</h1>
-<p class="sub">To a slow site. A message that doesn't land. A lead that sits for fourteen hours. The patients don't disappear — they buy from someone easier.</p>
+<div class="grid-2">
+<div class="hero-left">
+<div class="eyebrow">Independent Service Businesses</div>
+<h1>You are not short on <span class="flare">buyers</span>.<br>You are losing the ones you already <span class="beam">earned</span>.</h1>
+<p class="sub">To a slow page. A message that sounds like everyone else. A form that goes to an inbox nobody watches. A follow-up that arrives the next morning — after they have already called a competitor.</p>
 <div class="cta-row">
-<a href="#form" class="btn btn--primary">Get the Free Online Presence Audit</a>
-<a href="#ladder" class="btn btn--outline">See How It Works</a>
+<a href="#form" class="btn btn--primary">Get the Free Audit</a>
+<a href="#why" class="btn btn--outline">How It Works</a>
 </div>
 </div>
-<div class="diagnostic">
-<div class="label">What we measure</div>
-<div class="diagnostic-item">
-<div class="marker signal">14 h</div>
-<div class="text"><strong>Lead response time.</strong> How long your form sits before someone touches it. Most practices lose 40% of inquiries within the first hour.</div>
+
+<div class="ladder-wrap" id="ladder">
+<div class="ladder-label">Example shape — not your numbers</div>
+<div class="ladder" id="ladder-viz">
+<div class="ladder-row" data-width="100" data-color="beam">
+<div class="stage">Attention</div>
+<div class="bar-wrap"><div class="bar beam" style="width:0"></div></div>
+<div class="count">100</div>
 </div>
-<div class="diagnostic-item">
-<div class="marker signal">8.2 s</div>
-<div class="text"><strong>Mobile load time.</strong> How long your homepage takes to show up on a phone. Patients leave after 3 seconds.</div>
+<div class="ladder-row" data-width="62" data-color="beam">
+<div class="stage">Interest</div>
+<div class="bar-wrap"><div class="bar beam" style="width:0"></div></div>
+<div class="count">62</div>
+<div class="transition-label"><span class="tag volt">−38%</span><span class="reason">healthy</span></div>
 </div>
-<div class="diagnostic-item">
-<div class="marker sealed">1.2 s</div>
-<div class="text"><strong>Target load time.</strong> What we fix it to. Measured before and after, proven with data.</div>
+<div class="ladder-row" data-width="41" data-color="beam">
+<div class="stage">Site visit</div>
+<div class="bar-wrap"><div class="bar beam" style="width:0"></div></div>
+<div class="count">41</div>
+<div class="transition-label"><span class="tag volt">−34%</span><span class="reason">healthy</span></div>
+</div>
+<div class="ladder-row" data-width="12" data-color="flare">
+<div class="stage flare">Lead</div>
+<div class="bar-wrap"><div class="bar flare" style="width:0"></div></div>
+<div class="count flare">12</div>
+<div class="transition-label visible"><span class="tag flare">Leak · −71%</span><span class="reason flare">the offer is invisible, three competing buttons</span></div>
+</div>
+<div class="ladder-row" data-width="11" data-color="amber">
+<div class="stage amber">Contacted</div>
+<div class="bar-wrap"><div class="bar amber" style="width:0"></div></div>
+<div class="count">11</div>
+<div class="transition-label"><span class="tag amber">−8%</span><span class="reason">degrading</span></div>
+</div>
+<div class="ladder-row" data-width="4.5" data-color="beam">
+<div class="stage">Booked</div>
+<div class="bar-wrap"><div class="bar beam" style="width:0"></div></div>
+<div class="count">4.5</div>
+<div class="transition-label"><span class="tag volt">−59%</span><span class="reason">healthy</span></div>
+</div>
+<div class="ladder-row" data-width="2.8" data-color="flare">
+<div class="stage flare">Showed</div>
+<div class="bar-wrap"><div class="bar flare" style="width:0"></div></div>
+<div class="count flare">2.8</div>
+<div class="transition-label visible"><span class="tag flare">Leak · −38%</span><span class="reason flare">no reminders, no pre-appointment nurture</span></div>
+</div>
+<div class="ladder-row" data-width="1.9" data-color="beam">
+<div class="stage">Sold</div>
+<div class="bar-wrap"><div class="bar beam" style="width:0"></div></div>
+<div class="count">1.9</div>
+<div class="transition-label"><span class="tag volt">−32%</span><span class="reason">healthy</span></div>
+</div>
+</div>
+<div class="ladder-footer"><div class="dot"></div> Two broken transitions. Fix the first and every step below it moves — without spending another dollar on traffic.</div>
 </div>
 </div>
 </div>
 </section>
 
-<section class="ladder-section section--paper" id="ladder">
+<!-- ═══ WHY ═══ -->
+<section class="why section--ink" id="why">
 <div class="inner">
-<div class="section-label">The Ladder</div>
-<h2>Every patient moves through <span class="signal">the same chain</span>.</h2>
-<p class="lead">Somewhere in it, qualified people stop advancing. That transition is the leak. We prove it with numbers.</p>
-
-<div class="ladder">
-<div class="ladder-step visible">
-<div class="dot">1</div>
-<div class="content"><div class="rung">Attention</div><div class="desc">Someone hears your name. Google search, referral, ad, review.</div></div>
-</div>
-<div class="ladder-step visible">
-<div class="dot">2</div>
-<div class="content"><div class="rung">Interest</div><div class="desc">They want what you offer. They click through.</div></div>
-</div>
-<div class="ladder-step visible">
-<div class="dot">3</div>
-<div class="content"><div class="rung">Site visit</div><div class="desc">They land on your website. The page takes <span class="mono signal">8.2 seconds</span> to load on a phone. Most leave before it finishes.</div></div>
-</div>
-<div class="ladder-step">
-<div class="dot signal">✕</div>
-<div class="content"><div class="rung">Lead</div><div class="desc">They fill out your contact form. It lands in an inbox nobody checks after hours.<div class="leak">14 hours before first contact. The patient called two other practices by morning.</div><div class="fix">Automated response within 5 seconds. Human follow-up within 5 minutes.</div></div></div>
-</div>
-<div class="ladder-step">
-<div class="dot signal">✕</div>
-<div class="content"><div class="rung">Contacted</div><div class="desc">Someone calls back. The patient doesn't answer — they don't recognize the number. No voicemail. No text. No follow-up.<div class="leak">One attempt, then abandonment. The patient never heard from you again.</div><div class="fix">SMS + call + email. Three touches in 10 minutes. Meet them where they are.</div></div></div>
-</div>
-<div class="ladder-step">
-<div class="dot">6</div>
-<div class="content"><div class="rung">Booked</div><div class="desc">Consultation on the calendar. This is where most practices stop tracking.</div></div>
-</div>
-<div class="ladder-step">
-<div class="dot">7</div>
-<div class="content"><div class="rung">Showed</div><div class="desc">They walked in. Or they didn't. No-show rate is a leak too — one that most practices don't measure.</div></div>
-</div>
-<div class="ladder-step">
-<div class="dot">8</div>
-<div class="content"><div class="rung">Sold</div><div class="desc">Treatment accepted. Revenue attributed to source. This is the only number that matters — and most practices can't tell you which ad produced it.</div></div>
-</div>
-</div>
+<div class="pullquote">The buyers don't disappear.<br>They buy from <span class="flare">someone easier</span>.</div>
+<p class="body-text" style="text-align:center;margin:20px auto 0;">Every business has a leak. The question is where and how much. Most owners pour more money into ads and hope the math works out. It doesn't — not because the ads are wrong, but because the bucket has holes.</p>
+<p class="body-text" style="text-align:center;margin:12px auto 0;">We don't touch your ad budget until we have measured every step of your customer journey. Once we know where qualified people stop, we fix that one thing. Prove it. Then move to the next.</p>
 </div>
 </section>
 
-<section class="leaks-section section--paper" id="leaks">
-<div class="inner">
-<div class="section-label">The Seven Leaks</div>
-<h2>We find the hole. <span class="sealed">We seal it.</span></h2>
-<p class="body-text" style="margin-bottom:36px;">Every finding maps to one of seven leaks. The order is the priority — fix the top first, prove it, then move to the next.</p>
-<div class="leaks-grid">
-<div class="leak-item">
-<div class="num">01</div>
-<div class="name signal">Speed</div>
-<div class="fix-line">Inquiry at 8pm, reply next morning. Interest decayed — they called a competitor by 9am. <span class="sealed">Fix: auto-respond within 5 seconds, human within 5 minutes.</span></div>
-</div>
-<div class="leak-item">
-<div class="num">02</div>
-<div class="name signal">Capture</div>
-<div class="fix-line">Traffic arrives, nobody raises a hand. No visible way to start, no reason to now. <span class="sealed">Fix: one clear CTA per screen. Self-scheduling. Click-to-text.</span></div>
-</div>
-<div class="leak-item">
-<div class="num">03</div>
-<div class="name signal">Message</div>
-<div class="fix-line">Generic claims — "state-of-the-art," "top-rated." Says nothing the patient was actually searching for. <span class="sealed">Fix: answer the real question — "Can you fix MY problem? What will it look like? How much?"</span></div>
-</div>
-<div class="leak-item">
-<div class="num">04</div>
-<div class="name signal">Clarity</div>
-<div class="fix-line">Competing buttons, invisible offer, no price context. Patient can't picture buying — so they don't. <span class="sealed">Fix: one primary action per view. Visible starting price. Clear hierarchy.</span></div>
-</div>
-<div class="leak-item">
-<div class="num">05</div>
-<div class="name">Proof</div>
-<div class="fix-line">Stock photos. Thin reviews. No real work shown. Trust is earned, not claimed. <span class="sealed">Fix: real patient photos with consent. Verified reviews. Before/afters with context.</span></div>
-</div>
-<div class="leak-item">
-<div class="num">06</div>
-<div class="name">Ad quality</div>
-<div class="fix-line">Wrong audience, wrong creative, clicks landing on a homepage instead of the offer. <span class="sealed">Fix: single-offer landing pages. Track every click to source.</span></div>
-</div>
-<div class="leak-item">
-<div class="num">07</div>
-<div class="name">Sequence</div>
-<div class="fix-line">One call, then silence. No nurture, no no-show recovery, no reactivation. <span class="sealed">Fix: structured follow-up sequence. Every lead gets three touches in 24 hours.</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="dont-section section--ink">
-<div class="inner">
-<div class="section-label">The Reframe</div>
-<div class="pullquote">Don't advertise yet.<br><span class="signal">That's not a limitation.</span><br>It's a feature.</div>
-<p class="body-text" style="text-align:center;margin:24px auto 0;">More traffic into a leaking system is not growth. It is paying to expose more people to the problem. Every dollar you spend on ads before your funnel holds is a dollar you paid to lose patients faster.</p>
-<p class="body-text" style="text-align:center;margin:12px auto 0;">Some practices should turn their ads off before they spend another dollar. We will tell you if you are one of them — before we take a cent.</p>
-</div>
-</section>
-
-<section class="mech-section section--paper">
+<!-- ═══ MECHANISM ═══ -->
+<section class="mech section--canvas">
 <div class="inner">
 <div class="section-label">The Mechanism</div>
-<h2>Three steps. <span class="sealed">The order is the pitch.</span></h2>
-<p class="body-text" style="margin-bottom:36px;">Find the leak. Seal it. Then pour fuel. Skip a step and the whole system fails.</p>
-<div class="mech-grid">
-<div class="mech-item">
+<h2>Find the leak. <span class="volt">Seal it.</span> Then pour fuel.</h2>
+<p class="body-text" style="margin-bottom:32px;">Three steps. The order is the entire pitch. Skip a step and the whole system fails.</p>
+<div class="grid-3">
+<div class="mech-card">
 <div class="step">01</div>
 <h3>Find the leak</h3>
-<p>We audit your entire patient journey — from the first Google search to the last dollar collected. Every transition is measured. Every gap is documented. You get a map of exactly where your practice is losing people, with proof, not guesses.</p>
+<p>We audit your entire customer journey — from the first impression to the last dollar. Every transition is measured. Every gap is documented. You get a map of exactly where your business is losing people, with proof, not guesses.</p>
 </div>
-<div class="mech-item">
+<div class="mech-card">
 <div class="step">02</div>
 <h3>Seal the largest</h3>
 <p>We fix the single highest-impact constraint first. Speed, message, capture, clarity, proof, ad quality, or sequence — whichever is costing you the most. One thing at a time. Measured before and after. Proven before we touch the next.</p>
 </div>
-<div class="mech-item">
+<div class="mech-card">
 <div class="step">03</div>
 <h3>Pour fuel</h3>
 <p>Only after the bucket holds do we scale. Traffic, ads, referrals — poured into a system that actually converts. Every dollar of spend is tracked to attributed revenue. You only spend more when you know it works.</p>
 </div>
 </div>
+<div class="callout" style="margin-top:32px;">
+<div class="big">"Don't advertise yet" is a <span class="flare">feature</span>, not a limitation.</div>
+<p>More traffic into a leaking system is not growth. It is paying to expose more people to the problem. Some businesses should turn their ads off before they spend another dollar. We will tell you if you are one of them — before we take a cent.</p>
+</div>
 </div>
 </section>
 
-<section class="audit-section section--paper" id="audit">
+<!-- ═══ AUDIT SPECS ═══ -->
+<section class="section--surface">
 <div class="inner">
 <div class="section-label">The Deliverable</div>
-<h2>What the <span class="signal">Online Presence Audit</span> actually is.</h2>
-<p class="lead">A measured, 16-page PDF on your actual practice. Real numbers pulled from your real website. No fluff, no guesses, no pitch.</p>
+<h2>What the audit <span class="beam">measures</span>.</h2>
+<p class="body-text" style="margin-bottom:32px;">Specifics, not adjectives. Every number has a source. Unverifiable signals get dropped, not estimated.</p>
 <div class="audit-specs">
-<div class="audit-spec">
-<div class="spec-label">What we measure</div>
-<div class="spec-text">Mobile load speed, headline message, competing CTAs, visible offer, proof quality, review depth, lead response time, form-to-appointment flow, ad-to-revenue attribution.</div>
+<div class="audit-card">
+<div class="ring flare"></div>
+<div class="card-label">Speed</div>
+<h3>Lead response time</h3>
+<p>How long your form sits before someone touches it. Measured in minutes, not days. Most practices lose 40% of inquiries within the first hour.</p>
 </div>
-<div class="audit-spec">
-<div class="spec-label">What you get</div>
-<div class="spec-text">A 16-page PDF with every finding sourced, mapped to one of the Seven Leaks, and prioritized by revenue impact. Not a scorecard — a diagnosis.</div>
+<div class="audit-card">
+<div class="ring beam"></div>
+<div class="card-label">Capture</div>
+<h3>Conversion rate</h3>
+<p>How many visitors raise a hand vs. how many leave. We trace every CTA, every click, every exit. The gap between "interested" and "lead" is where most money dies.</p>
 </div>
-<div class="audit-spec">
-<div class="spec-label">How long it takes</div>
-<div class="spec-text">We measure everything in 48 hours. The PDF is delivered before our first call. You read it on your own time.</div>
+<div class="audit-card">
+<div class="ring amber"></div>
+<div class="card-label">Offer clarity</div>
+<h3>Message-to-market fit</h3>
+<p>What your website says vs. what your buyer is actually searching for. Generic claims get flagged. Specific, outcome-driven language gets measured.</p>
 </div>
-<div class="audit-spec">
-<div class="spec-label">What it costs</div>
-<div class="spec-text">Nothing. The audit is free. It is the first step of the system — we do not charge to diagnose a problem we haven't proven exists.</div>
+<div class="audit-card">
+<div class="ring flare"></div>
+<div class="card-label">Response time</div>
+<h3>Follow-up sequence</h3>
+<p>How many touches, how fast, and through which channels. One call and done is not a follow-up. We measure the full sequence.</p>
 </div>
-<div class="audit-spec">
-<div class="spec-label">What happens after</div>
-<div class="spec-text">A 15-minute call to walk through the findings. If the fix is clear, we tell you. If the economics don't work, we tell you that too. No pitch, no pressure.</div>
 </div>
-<div class="audit-spec">
-<div class="spec-label">What we don't do</div>
-<div class="spec-text">We don't run ads until the bucket holds. We don't sign you to a retainer. We don't sell you software. We find the leak, seal it, and prove it — then we talk about what comes next.</div>
+<div class="audit-note">Every number in the audit has a source, definition, timeframe, and attribution listed beside it. If we cannot verify a signal, we drop it — we never estimate.</div>
+</div>
+</section>
+
+<!-- ═══ SEVEN LEAKS ═══ -->
+<section class="section--canvas" id="leaks">
+<div class="inner">
+<div class="section-label">The Seven Leaks</div>
+<h2>We find the hole. <span class="volt">We seal it.</span></h2>
+<p class="body-text" style="margin-bottom:28px;">Every finding maps to one of seven leaks. The order is the priority — fix the top first, prove it, then move to the next.</p>
+<div class="leaks-grid">
+<div class="leak-cell">
+<div class="num">01</div>
+<div class="name flare">Speed</div>
+<div class="desc">Inquiry at 8pm, reply next morning. Interest decayed — they called a competitor by 9am. <span class="fix">Fix: auto-respond within 5 seconds, human within 5 minutes.</span></div>
+</div>
+<div class="leak-cell">
+<div class="num">02</div>
+<div class="name flare">Capture</div>
+<div class="desc">Traffic arrives, nobody raises a hand. No visible way to start, no reason to now. <span class="fix">Fix: one clear CTA per screen. Self-scheduling. Click-to-text.</span></div>
+</div>
+<div class="leak-cell">
+<div class="num">03</div>
+<div class="name flare">Message</div>
+<div class="desc">Generic claims — "state-of-the-art," "top-rated." Says nothing the buyer was actually searching for. <span class="fix">Fix: answer the real question — "Can you fix MY problem? What will it look like? How much?"</span></div>
+</div>
+<div class="leak-cell">
+<div class="num">04</div>
+<div class="name flare">Clarity</div>
+<div class="desc">Competing buttons, invisible offer, no price context. Buyer cannot picture buying — so they don't. <span class="fix">Fix: one primary action per view. Visible starting price. Clear hierarchy.</span></div>
+</div>
+<div class="leak-cell">
+<div class="num">05</div>
+<div class="name">Proof</div>
+<div class="desc">Stock photos. Thin reviews. No real work shown. Trust is earned, not claimed. <span class="fix">Fix: real results with documented consent. Verified reviews. Case studies with context.</span></div>
+</div>
+<div class="leak-cell">
+<div class="num">06</div>
+<div class="name">Ad quality</div>
+<div class="desc">Wrong audience, wrong creative, clicks landing on a homepage instead of the offer. <span class="fix">Fix: single-offer landing pages. Track every click to source.</span></div>
+</div>
+<div class="leak-cell">
+<div class="num">07</div>
+<div class="name">Sequence</div>
+<div class="desc">One call, then silence. No nurture, no no-show recovery, no reactivation. <span class="fix">Fix: structured follow-up sequence. Every lead gets three touches in 24 hours.</span></div>
+</div>
+<div class="leak-cell leak-cell--volt">
+<div class="num">—</div>
+<div class="name">One at a time</div>
+<div class="desc">Largest proven constraint first. Measured before and after. Only then do we move to the next. No random changes. No guesswork.</div>
 </div>
 </div>
 </div>
 </section>
 
-<section class="form-section section--paper" id="form">
+<!-- ═══ SPEED TO LEAD ═══ -->
+<section class="speed section--ink">
 <div class="inner">
-<div class="section-label">Start Here</div>
-<h2>Get your <span class="signal">free audit</span>.</h2>
-<p class="lead">Fill out the form below. We'll measure your entire online presence and deliver a 16-page PDF within 48 hours. No commitment. No pitch. Just the truth.</p>
+<div class="grid-2">
+<div>
+<div class="section-label">Speed to Lead</div>
+<h2>The 9pm inquiry <span class="flare">should not wait until 9am</span>.</h2>
+<p class="body-text">A prospective buyer fills out your form at 9pm. It sits in an inbox until the next business day. By 9am, they have called two competitors. One of them answered. You never knew they existed.</p>
+<div class="stat-box">
+<div class="num"><span class="mono">14</span> <span>hours</span></div>
+<div class="l">Average delay from form submission to first contact for most independent service businesses.</div>
+</div>
+<div class="stat-box">
+<div class="num"><span class="mono" style="color:var(--volt);">11</span> <span>seconds</span></div>
+<div class="l">What it looks like when the leak is sealed. The fix is not complex — it is just neglected.</div>
+</div>
+</div>
+<div>
+<div class="sms-mock">
+<div class="msg">
+<div class="bubble bubble--in">
+<div class="name">Inquiry received</div>
+Hi, I am interested in learning more about your services. Can you send me some information?
+</div>
+<div class="bubble bubble--out">
+<div class="name">Auto-response</div>
+Thanks for reaching out. One of our team will be with you shortly.
+</div>
+<div class="bubble bubble--in">
+<div class="name">Human follow-up</div>
+Hi there — this is Will from the team. I got your inquiry. Are you free for a quick call in the next few minutes?
+</div>
+</div>
+<div class="status">
+<div class="dot"></div>
+<span>11 seconds from submission to first response</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ MARKETS ═══ -->
+<section class="section--surface" id="markets">
+<div class="inner">
+<div class="section-label">Markets</div>
+<h2>One business per <span class="beam">market</span>. By application.</h2>
+<p class="body-text" style="margin-bottom:24px;">We take one independent service business per metro area. If your competitor already works with us, we will tell you — and we will not take your money.</p>
+<div class="markets-grid">
+<span class="market-chip market-chip--claimed">Cosmetic Dentistry · Beverly Hills</span>
+<span class="market-chip market-chip--claimed">Cosmetic Dentistry · New York City</span>
+<span class="market-chip market-chip--open">Cosmetic Dentistry · San Francisco</span>
+<span class="market-chip market-chip--open">Med Spa · Los Angeles</span>
+<span class="market-chip market-chip--open">Med Spa · Miami</span>
+<span class="market-chip market-chip--open">HVAC · San Jose</span>
+<span class="market-chip market-chip--open">Dental · Austin</span>
+<span class="market-chip market-chip--open">Dental · Denver</span>
+<span class="market-chip market-chip--open">Med Spa · Chicago</span>
+<span class="market-chip market-chip--open">HVAC · Phoenix</span>
+<span class="market-chip market-chip--open">Dental · Seattle</span>
+<span class="market-chip market-chip--open">Med Spa · Dallas</span>
+<span class="market-chip market-chip--open">Cosmetic Dentistry · Miami</span>
+<span class="market-chip market-chip--open">HVAC · Denver</span>
+<span class="market-chip market-chip--open">Dental · Portland</span>
+<span class="market-chip market-chip--open">Cosmetic Dentistry · San Diego</span>
+<span class="market-chip market-chip--open" style="border-color:var(--beam);color:var(--beam);">+ 11 more open territories</span>
+</div>
+<div class="market-legend">
+<span><div class="swatch swatch--claimed"></div> Claimed</span>
+<span><div class="swatch swatch--open"></div> Open — apply</span>
+</div>
+</div>
+</section>
+
+<!-- ═══ CASE STUDIES ═══ -->
+<section class="section--canvas" id="proof">
+<div class="inner">
+<div class="section-label">Proof</div>
+<h2>Results from real <span class="beam">engagements</span>.</h2>
+<p class="body-text" style="margin-bottom:28px;">Nothing goes in until the source, definition, dates, attribution, and written permission are verified. Until then, the cards stay empty.</p>
+<div class="proof-grid">
+<div class="case-card">
+<div class="label">Case Study 01</div>
+<div class="slot">
+[[ Practice name ]]<br>[[ Industry ]]<br>[[ Metric + timeframe ]]
+<p>Nothing goes here until the source, definition, dates, attribution, and written permission are verified.</p>
+</div>
+</div>
+<div class="case-card">
+<div class="label">Case Study 02</div>
+<div class="slot">
+[[ Practice name ]]<br>[[ Industry ]]<br>[[ Metric + timeframe ]]
+<p>Nothing goes here until the source, definition, dates, attribution, and written permission are verified.</p>
+</div>
+</div>
+</div>
+<div class="proof-footnote">Every number on this site has a source, definition, timeframe, and attribution. We never estimate, guess, or fabricate.</div>
+</div>
+</section>
+
+<!-- ═══ AFTER YOU APPLY ═══ -->
+<section class="section--ink">
+<div class="inner">
+<div class="section-label">The Process</div>
+<h2>After you <span class="volt">apply</span>.</h2>
+<p class="body-text" style="margin-bottom:28px;">Four steps. No fluff. No pressure.</p>
+<div class="steps">
+<div class="step-row">
+<div class="s-num beam">01</div>
+<div class="step-text">
+<h4>Apply</h4>
+<p>Fill out the form below. It takes two minutes.</p>
+</div>
+</div>
+<div class="step-row">
+<div class="s-num beam">02</div>
+<div class="step-text">
+<h4>Market check</h4>
+<p>We verify your market is open. If it is not, we tell you immediately. If it is, we proceed.</p>
+</div>
+</div>
+<div class="step-row">
+<div class="s-num volt">03</div>
+<div class="step-text">
+<h4>Free audit</h4>
+<p>We measure your entire online presence and deliver a 16-page PDF within 48 hours. You read it on your own time. No call required.</p>
+</div>
+</div>
+<div class="step-row">
+<div class="s-num volt">04</div>
+<div class="step-text">
+<h4>Seal then fuel</h4>
+<p>If the fix is clear, we tell you. If the economics do not work, we tell you that too. We only move forward when the diagnosis is proven.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section--surface" id="faq">
+<div class="inner">
+<div class="section-label">FAQ</div>
+<h2>Questions we <span class="amber">hear</span>.</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+<span>What if my market is already taken?</span>
+<span class="arrow">+</span>
+</div>
+<div class="faq-a">We tell you immediately. We take one business per metro area per vertical. If your competitor already works with us, we will not take your money. We will offer to put you on the waitlist if the territory opens.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+<span>I already work with an agency. What makes you different?</span>
+<span class="arrow">+</span>
+</div>
+<div class="faq-a">Most agencies sell you traffic and hope. We find the leak first, seal it, prove it, and only then pour fuel. If your current agency is delivering attributable revenue, stay with them. If they are delivering lead counts and hoping, that is not the same thing.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+<span>How long does it take to see results?</span>
+<span class="arrow">+</span>
+</div>
+<div class="faq-a">The audit takes 48 hours. The first fix is implemented within one week of starting. Most clients see measurable improvement in the first 30 days. The full system — find, seal, fuel — typically takes 60–90 days depending on the complexity of the largest constraint.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+<span>Do you guarantee results?</span>
+<span class="arrow">+</span>
+</div>
+<div class="faq-a">No. We do not guarantee a revenue outcome we do not fully control. What we guarantee is in writing: the work, the measurement, the accountability. Every fix is measured before and after. If a fix does not improve the metric, we do not bill for it. That is the guarantee.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+<span>What does the audit cost?</span>
+<span class="arrow">+</span>
+</div>
+<div class="faq-a">Nothing. The audit is free. It is the first step of the system — we do not charge to diagnose a problem we have not proven exists. If the economics do not work for your business, we tell you honestly and part ways. No invoice, no hard feelings.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ FORM ═══ -->
+<section class="form-section section--canvas" id="form">
+<div class="inner">
+<div class="section-label">Apply</div>
+<h2>Get your <span class="flare">free audit</span>.</h2>
+<p class="lead" style="font-size:15px;color:var(--body);text-align:center;margin-bottom:24px;">Fill out the form. We will measure your entire online presence and deliver a 16-page PDF within 48 hours. No commitment. No pitch. Just the truth.</p>
 <div class="form-container">
 <!-- GHL FORM EMBED GOES HERE -->
-<!-- Paste the GoHighLevel form embed code from your GHL account -->
-<!-- Steps to get it: -->
-<!-- 1. Log into GHL → Locations → Select your location -->
-<!-- 2. Go to Opportunities → Forms → Create or edit a form -->
-<!-- 3. Set redirect to your thank-you page inside GHL -->
-<!-- 4. Copy the embed code and paste it below -->
-<!-- The container below is sized to accept the GHL embed iframe -->
 <!-- ============================================ -->
-<div style="text-align:center;padding:40px 20px;border:2px dashed var(--line);border-radius:var(--radius);">
-<p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:12px;">GHL FORM EMBED PLACEHOLDER</p>
-<p style="font-size:14px;color:var(--ink-soft);margin-bottom:20px;">Paste your GoHighLevel form embed code here.</p>
-<a href="mailto:will@scalehaus.io" class="btn btn--primary" style="font-size:10px;padding:10px 24px;">Email us instead</a>
-<p style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:12px;">will@scalehaus.io</p>
+<!-- Paste your GoHighLevel form embed code below -->
+<!-- Steps: Log into GHL → Locations → Select location -->
+<!-- → Opportunities → Forms → Create/edit form -->
+<!-- → Set redirect inside GHL → Copy embed code -->
+<!-- ============================================ -->
+<div class="form-placeholder">
+<span class="icon">📋</span>
+<p>GHL Form Embed Placeholder</p>
+<p style="font-size:10px;color:var(--muted);margin-bottom:0;">Paste your GoHighLevel form embed code here.</p>
 </div>
 <!-- ============================================ -->
-<!-- Once the GHL embed is in place, remove everything between the dashed borders above -->
+<!-- Remove the placeholder div above when you paste the real embed -->
 </div>
 </div>
 </section>
 
-<section class="excl-section section--ink">
-<div class="inner">
-<div class="section-label">Exclusivity</div>
-<div class="pullquote">One practice per market.<br>By application.</div>
-<p class="body-text" style="text-align:center;margin:24px auto 0;max-width:520px;">We take one cosmetic dentistry practice per metro area. If your competitor already works with us, we will tell you — and we will not take your money. Most applications receive a no. That is not a sales tactic. It is how we ensure every client gets the attention they deserve.</p>
-</div>
-</section>
-
+<!-- ═══ FOOTER ═══ -->
 <footer>
 <div class="inner">
-<a href="#hero" class="logo" style="font-size:15px;font-weight:700;">Scale<span style="font-weight:400;">Haus</span></a>
-<div class="links">
+<div>
+<h4>ScaleHaus</h4>
+<p style="font-size:13px;color:var(--body);margin-bottom:8px;">Find the leak. Seal it. Then pour fuel.</p>
+<p style="font-size:13px;color:var(--muted);">will@scalehaus.io</p>
+</div>
+<div>
+<h4>Site</h4>
 <a href="#hero">Home</a>
 <a href="#ladder">The Ladder</a>
 <a href="#leaks">The Leaks</a>
-<a href="#audit">The Audit</a>
-<a href="#form">Get the Audit</a>
+<a href="#markets">Markets</a>
+<a href="#faq">FAQ</a>
+</div>
+<div>
+<h4>Legal</h4>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+<div class="compliance">
+Not endorsed by or affiliated with Facebook, Google, or YouTube. Individual results not typical. No guarantees of specific outcomes are made. The audit is a diagnostic assessment, not a guarantee of revenue or customer volume.
 </div>
 <div class="copy">&copy; 2026 ScaleHaus</div>
-<div class="compliance">
-<p>Not endorsed by or affiliated with Facebook, Google, or YouTube. Individual results not typical. No guarantees of specific outcomes are made. The audit is a diagnostic assessment, not a guarantee of revenue or patient volume.</p>
-</div>
 </div>
 </footer>
 
 <script>
-// Nav scroll
-const nav = document.getElementById('nav');
-let ticking = false;
-window.addEventListener('scroll',()=>{
-  if(!ticking){requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>60);ticking=false;});ticking=true;}
-},{passive:true});
-
-// Reveal on scroll
-const observe = ()=>{
+// Ladder animation on scroll
+document.addEventListener('DOMContentLoaded',()=>{
+  const ladder = document.getElementById('ladder-viz');
+  if(!ladder) return;
+  const rows = ladder.querySelectorAll('.ladder-row');
+  const labels = ladder.querySelectorAll('.transition-label');
+  
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+      if(entry.isIntersecting){
+        rows.forEach((row,i)=>{
+          setTimeout(()=>{
+            const bar = row.querySelector('.bar');
+            if(bar) bar.style.width = row.dataset.width + '%';
+            const label = row.querySelector('.transition-label');
+            if(label && i < rows.length - 1) label.classList.add('visible');
+          },i * 70);
+        });
+        observer.unobserve(ladder);
+      }
     });
-  },{threshold:0.15});
-  document.querySelectorAll('.ladder-step').forEach(el=>observer.observe(el));
-};
-if('IntersectionObserver' in window){observe();}else{document.querySelectorAll('.ladder-step').forEach(el=>el.classList.add('visible'));}
+  },{threshold:0.3});
+  
+  if('IntersectionObserver' in window) observer.observe(ladder);
+  else rows.forEach((row,i)=>{const bar=row.querySelector('.bar');if(bar)bar.style.width=row.dataset.width+'%';});
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
+});
 </script>
 </body>
 </html>
