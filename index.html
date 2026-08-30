@@ -3,151 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ScaleHaus — Stop Leaking Customers. Start Growing.</title>
-<meta name="description" content="ScaleHaus helps independent service businesses find and fix the leaks in their customer journey. No fluff. No retainers. Just a system that works.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>ScaleHaus — You're Not Short on Customers. You're Losing the Ones You Already Earned.</title>
+<meta name="description" content="Most agencies sell you more traffic. We find where your business leaks customers, fix it, and only then pour fuel. No retainers. No fluff.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy: #0d1b2a;
-  --navy-light: #1b2838;
-  --navy-card: #1a2332;
-  --accent: #3385FF;
-  --accent-light: #60a5fa;
-  --accent-glow: rgba(51,133,255,0.15);
-  --gold: #c9a84c;
-  --gold-light: #e8d5a3;
-  --white: #ffffff;
-  --off-white: #f8f9fc;
-  --gray-50: #f1f3f9;
-  --gray-100: #e8ecf2;
-  --gray-200: #d0d6e0;
-  --gray-300: #b0b8c4;
-  --gray-400: #8a92a0;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
-  --radius-sm: 6px;
-  --radius: 10px;
-  --radius-lg: 16px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-xl: 0 20px 60px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.06);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', -apple-system, sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: var(--accent-light); }
-img { max-width: 100%; display: block; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:'Inter',-apple-system,sans-serif;background:#07080a;color:#f5f5f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::selection{background:rgba(56,132,255,0.3);}
 
-/* Nav */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0; border-bottom: 1px solid rgba(0,0,0,0.06); background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.logo { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; }
-.logo span { color: var(--accent); }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-500); transition: color 0.2s; }
-.nav-links a:hover { color: var(--navy); }
-.nav-cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent); color: white; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; transition: all 0.2s; }
-.nav-cta:hover { background: var(--accent-light); color: white; transform: translateY(-1px); }
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0;transition:all 0.4s cubic-bezier(.16,1,.3,1);}
+nav.scrolled{background:rgba(7,8,10,0.85);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid rgba(255,255,255,.04);}
+nav .inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.3px;display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo mark{background:linear-gradient(135deg,#3884ff,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#3884ff;transition:width .4s cubic-bezier(.16,1,.3,1);}
+.nav-links a:hover{color:rgba(255,255,255,.85);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{padding:8px 22px;background:#3884ff;border:none;border-radius:6px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);text-decoration:none;}
+.nav-cta:hover{background:#4d92ff;transform:translateY(-1px);box-shadow:0 8px 28px rgba(56,132,255,.25);}
 
-/* Hero */
-.hero { padding: 160px 0 100px; background: linear-gradient(135deg, var(--navy) 0%, #0f2540 50%, var(--navy-light) 100%); position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; }
-.hero::after { content: ''; position: absolute; bottom: -30%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%); pointer-events: none; }
-.hero .container { position: relative; z-index: 1; }
-.hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(51,133,255,0.1); border: 1px solid rgba(51,133,255,0.2); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 24px; letter-spacing: 0.3px; text-transform: uppercase; }
-.hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; color: var(--white); margin-bottom: 20px; max-width: 800px; }
-.hero h1 span { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hero p { font-size: 18px; color: var(--gray-300); max-width: 600px; margin-bottom: 36px; line-height: 1.7; }
-.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; padding: 14px 28px; border-radius: var(--radius-sm); font-weight: 600; font-size: 15px; transition: all 0.25s; cursor: pointer; }
-.btn-primary { background: var(--accent); color: white; }
-.btn-primary:hover { background: var(--accent-light); color: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(51,133,255,0.3); }
-.btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--gray-200); }
-.btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: white; }
-.hero-stats { display: flex; gap: 48px; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); }
-.hero-stat h3 { font-size: 28px; font-weight: 700; color: var(--white); letter-spacing: -0.5px; }
-.hero-stat p { font-size: 13px; color: var(--gray-400); margin: 0; }
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px;}
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.hero-bg .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;}
+.hero-bg .orb:nth-child(1){width:600px;height:600px;background:#3884ff;top:-20%;right:-10%;animation:float 20s ease-in-out infinite;}
+.hero-bg .orb:nth-child(2){width:400px;height:400px;background:#7c3aed;bottom:-10%;left:-5%;animation:float 25s ease-in-out infinite reverse;}
+.hero-bg .orb:nth-child(3){width:300px;height:300px;background:#f59e0b;top:40%;right:30%;opacity:.06;animation:float 18s ease-in-out infinite 5s;}
+@keyframes float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-40px) scale(1.05);}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.hero .inner{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:2;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:rgba(56,132,255,.08);border:1px solid rgba(56,132,255,.15);border-radius:100px;font-size:11px;font-weight:600;color:#60a5fa;letter-spacing:.5px;text-transform:uppercase;margin-bottom:32px;opacity:0;transform:translateY(20px);animation:fadeUp .8s .2s forwards;}
+.hero h1{font-size:clamp(40px,6vw,76px);font-weight:800;line-height:1.04;letter-spacing:-2.5px;color:#fff;margin-bottom:24px;max-width:900px;opacity:0;transform:translateY(30px);animation:fadeUp .8s .3s forwards;}
+.hero h1 .gradient{background:linear-gradient(135deg,#3884ff 0%,#60a5fa 40%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.3);}
+.hero p{font-size:clamp(16px,1.4vw,20px);color:rgba(255,255,255,.45);max-width:620px;line-height:1.7;margin-bottom:40px;opacity:0;transform:translateY(30px);animation:fadeUp .8s .4s forwards;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;transform:translateY(30px);animation:fadeUp .8s .5s forwards;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;font-family:inherit;}
+.btn-primary{background:linear-gradient(135deg,#3884ff,#2563eb);color:#fff;box-shadow:0 4px 24px rgba(56,132,255,.2);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(56,132,255,.35);}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);}
+.btn-ghost:hover{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.03);}
+.btn svg{width:16px;height:16px;transition:transform .4s;}
+.btn:hover svg{transform:translateX(4px);}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s .7s forwards;}
+.hero-scroll span{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:2px;text-transform:uppercase;}
+.scroll-dot{width:2px;height:24px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);border-radius:1px;animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:1;transform:scaleY(1);}50%{opacity:.3;transform:scaleY(.5);}}
 
-/* Sections */
-section { padding: 100px 0; }
-.section-label { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-.section-title { font-size: 36px; font-weight: 700; color: var(--navy); letter-spacing: -1px; margin-bottom: 16px; line-height: 1.2; }
-.section-sub { font-size: 17px; color: var(--gray-500); max-width: 600px; line-height: 1.7; }
+/* ── PROBLEM ── */
+.problem{background:#0c0d10;padding:140px 0;position:relative;}
+.problem .inner{max-width:1200px;margin:0 auto;padding:0 28px;}
+.section-tag{font-size:11px;font-weight:600;color:#3884ff;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+.section-h{font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.08;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;}
+.section-h .fade{color:rgba(255,255,255,.2);}
+.section-p{font-size:clamp(15px,1.2vw,18px);color:rgba(255,255,255,.4);max-width:640px;line-height:1.7;margin-bottom:48px;}
+.bucket-show{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.bucket-visual{position:relative;padding:40px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:16px;overflow:hidden;}
+.bucket-visual::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(56,132,255,.06),transparent);pointer-events:none;}
+.bucket-graphic{display:flex;align-items:flex-end;gap:32px;justify-content:center;padding:20px 0 32px;}
+.bucket-v{width:96px;border:2px solid rgba(255,255,255,.08);border-radius:4px;position:relative;background:rgba(255,255,255,.02);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.bucket-v .water{width:100%;background:linear-gradient(to top,rgba(56,132,255,.4),rgba(56,132,255,.15));border-radius:0 0 2px 2px;transition:height .5s;position:absolute;bottom:0;left:0;}
+.bucket-v .holes{position:absolute;inset:0;pointer-events:none;}
+.bucket-v .holes span{position:absolute;width:6px;height:6px;background:rgba(245,158,11,.4);border-radius:50%;}
+.bucket-v.normal{height:160px;}
+.bucket-v.fixed{height:160px;}
+.bucket-v .label{position:absolute;bottom:-28px;font-size:11px;color:rgba(255,255,255,.3);white-space:nowrap;left:50%;transform:translateX(-50%);}
+.bucket-v .arrow{position:absolute;top:50%;right:-44px;font-size:20px;color:rgba(255,255,255,.2);transform:translateY(-50%);}
+.bucket-caption{text-align:center;font-size:13px;color:rgba(255,255,255,.35);line-height:1.6;}
+.bucket-caption strong{color:rgba(255,255,255,.6);}
+.problem-list{display:flex;flex-direction:column;gap:20px;}
+.problem-item{display:flex;gap:16px;padding:20px 24px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);transition:all .4s;}
+.problem-item:hover{background:rgba(255,255,255,.04);border-color:rgba(56,132,255,.15);}
+.problem-item .icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.problem-item .icon.red{background:rgba(239,68,68,.1);}
+.problem-item .icon.amber{background:rgba(245,158,11,.1);}
+.problem-item .icon.blue{background:rgba(56,132,255,.1);}
+.problem-item h4{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px;}
+.problem-item p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;}
 
-/* Thesis */
-.thesis { background: var(--off-white); }
-.thesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.thesis-visual { background: var(--navy); border-radius: var(--radius-lg); padding: 48px; position: relative; overflow: hidden; }
-.thesis-visual h3 { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.1; letter-spacing: -1px; }
-.thesis-visual .highlight { color: var(--accent); }
-.thesis-visual p { color: var(--gray-400); font-size: 14px; margin-top: 16px; line-height: 1.6; }
-.bucket-animation { display: flex; align-items: flex-end; gap: 24px; margin-top: 32px; }
-.bucket { width: 100px; height: 120px; border: 2px solid rgba(255,255,255,0.1); border-radius: 4px; position: relative; display: flex; align-items: flex-end; justify-content: center; }
-.bucket-fill { width: 100%; background: var(--accent); border-radius: 0 0 2px 2px; opacity: 0.6; transition: height 0.5s; }
-.bucket-label { position: absolute; bottom: -28px; font-size: 11px; color: var(--gray-500); white-space: nowrap; }
-.bucket-hole { position: absolute; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; opacity: 0.5; }
-.bucket-h1 { bottom: 24px; right: 12px; }
-.bucket-h2 { bottom: 12px; right: 8px; }
-.bucket-h3 { bottom: 4px; right: 16px; }
-.thesis-content .highlight-quote { font-size: 18px; font-weight: 600; color: var(--navy); margin-top: 24px; padding: 20px 24px; border-left: 3px solid var(--accent); background: white; border-radius: 0 var(--radius) var(--radius) 0; line-height: 1.5; }
+/* ── STATS ── */
+.stats{background:#07080a;padding:80px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);}
+.stats .inner{max-width:1200px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+.stat-item{text-align:center;padding:24px;}
+.stat-num{font-size:36px;font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;margin-bottom:8px;}
+.stat-num .blue{color:#3884ff;}
+.stat-label{font-size:13px;color:rgba(255,255,255,.35);line-height:1.4;}
 
-/* Process */
-.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.process-card { padding: 40px 32px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-100); transition: all 0.3s; }
-.process-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-.process-card .num { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 16px; letter-spacing: 1px; text-transform: uppercase; }
-.process-card h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.3px; }
-.process-card p { font-size: 15px; color: var(--gray-500); line-height: 1.7; }
-.process-card .icon-wrap { width: 48px; height: 48px; border-radius: 12px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 22px; }
+/* ── HOW ── */
+.how{background:#0c0d10;padding:140px 0;position:relative;}
+.how .inner{max-width:1200px;margin:0 auto;padding:0 28px;}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.how-card{padding:48px 32px;border-radius:16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1);}
+.how-card:hover{background:rgba(255,255,255,.04);border-color:rgba(56,132,255,.2);transform:translateY(-6px);}
+.how-card .glow{position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(56,132,255,.04),transparent);pointer-events:none;transition:opacity .5s;}
+.how-card:hover .glow{opacity:1;}
+.how-card .num{font-size:48px;font-weight:800;color:rgba(56,132,255,.08);position:absolute;top:16px;right:24px;letter-spacing:-2px;line-height:1;}
+.how-card .ic{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:24px;background:rgba(56,132,255,.1);}
+.how-card h3{font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-0.3px;}
+.how-card p{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7;}
 
-/* CTA */
-.cta-section { background: var(--navy); text-align: center; }
-.cta-section .section-title { color: var(--white); }
-.cta-section .section-sub { color: var(--gray-400); margin: 0 auto 32px; }
-.cta-section .btn-primary { font-size: 16px; padding: 16px 36px; }
+/* ── BAIT ── */
+.bait{background:#07080a;padding:140px 0;position:relative;overflow:hidden;}
+.bait .inner{max-width:1200px;margin:0 auto;padding:0 28px;}
+.bait-show{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.bait-text{position:relative;}
+.bait-quote{padding:32px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;position:relative;margin-bottom:24px;}
+.bait-quote::before{content:'"';font-size:64px;color:rgba(56,132,255,.15);position:absolute;top:8px;left:20px;font-family:Georgia,serif;line-height:1;}
+.bait-quote p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;font-style:italic;}
+.bait-quote .from{display:block;margin-top:12px;font-size:12px;color:rgba(255,255,255,.3);font-style:normal;}
+.bait-context{font-size:14px;color:rgba(255,255,255,.3);line-height:1.7;padding-left:8px;border-left:2px solid rgba(56,132,255,.2);padding-left:20px;}
+.bait-visual{position:relative;}
+.bait-phone{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:24px 20px;max-width:400px;}
+.bait-phone .msg{padding:12px 16px;border-radius:10px;font-size:13px;line-height:1.5;margin-bottom:12px;max-width:85%;}
+.bait-phone .in{background:rgba(56,132,255,.1);border:1px solid rgba(56,132,255,.15);color:rgba(255,255,255,.8);align-self:flex-start;}
+.bait-phone .out{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.5);margin-left:auto;}
+.bait-phone .status{font-size:11px;color:rgba(245,158,11,.6);margin-top:8px;display:flex;align-items:center;gap:6px;}
+.bait-phone .status .dot{width:6px;height:6px;background:#f59e0b;border-radius:50%;animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
-/* Footer */
-footer { padding: 48px 0; border-top: 1px solid var(--gray-100); }
-footer .container { display: flex; justify-content: space-between; align-items: center; }
-footer .links { display: flex; gap: 24px; }
-footer .links a { font-size: 13px; color: var(--gray-400); }
-footer .links a:hover { color: var(--gray-600); }
-footer .copy { font-size: 13px; color: var(--gray-400); }
+/* ── CTA ── */
+.cta{background:linear-gradient(135deg,#0c0d10 0%,#111318 50%,#0c0d10 100%);padding:120px 0;position:relative;overflow:hidden;text-align:center;}
+.cta .inner{max-width:700px;margin:0 auto;padding:0 28px;position:relative;z-index:2;}
+.cta h2{font-size:clamp(32px,3.5vw,48px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;}
+.cta p{font-size:clamp(15px,1.1vw,17px);color:rgba(255,255,255,.4);margin-bottom:36px;line-height:1.7;}
+.cta-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.cta-bg .orb{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(56,132,255,.06),transparent);top:50%;left:50%;transform:translate(-50%,-50%);}
 
-/* Legal pages */
-.legal-page { padding: 120px 0 80px; }
-.legal-page .container { max-width: 780px; }
-.legal-page h1 { font-size: 36px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -1px; }
-.legal-page .date { color: var(--gray-400); font-size: 14px; margin-bottom: 40px; }
-.legal-page h2 { font-size: 20px; font-weight: 600; color: var(--navy); margin-top: 36px; margin-bottom: 12px; }
-.legal-page p { font-size: 15px; color: var(--gray-600); margin-bottom: 16px; line-height: 1.7; }
-.legal-page ul { margin: 12px 0 20px 24px; }
-.legal-page li { font-size: 15px; color: var(--gray-600); margin-bottom: 8px; line-height: 1.6; }
+/* ── FOOTER ── */
+footer{background:#07080a;padding:48px 0;border-top:1px solid rgba(255,255,255,.04);}
+footer .inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;}
+footer .links{display:flex;gap:24px;}
+footer .links a{font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .3s;}
+footer .links a:hover{color:rgba(255,255,255,.5);}
+footer .copy{font-size:12px;color:rgba(255,255,255,.15);}
 
-@media (max-width: 768px) {
-  .hero h1 { font-size: 32px; }
-  .hero p { font-size: 16px; }
-  .hero-stats { flex-direction: column; gap: 24px; }
-  .thesis-grid { grid-template-columns: 1fr; gap: 32px; }
-  .process-grid { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  footer .container { flex-direction: column; gap: 16px; text-align: center; }
-  section { padding: 60px 0; }
-  .section-title { font-size: 28px; }
+/* ── LEGAL ── */
+.legal{max-width:780px;margin:0 auto;padding:120px 28px 80px;}
+.legal h1{font-size:36px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-1px;}
+.legal .date{color:rgba(255,255,255,.3);font-size:13px;margin-bottom:48px;}
+.legal h2{font-size:20px;font-weight:600;color:#fff;margin-top:40px;margin-bottom:12px;}
+.legal p{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:16px;line-height:1.7;}
+.legal ul{margin:12px 0 20px 24px;}
+.legal li{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:8px;line-height:1.6;}
+
+/* ── UTILITY ── */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:768px){
+  nav .inner{padding:0 20px;}
+  .nav-links a{display:none;}
+  .hero{min-height:auto;padding:100px 0 60px;}
+  .hero h1{letter-spacing:-1.5px;}
+  .bucket-show,.bait-show{grid-template-columns:1fr;gap:32px;}
+  .how-grid{grid-template-columns:1fr;}
+  .stats .inner{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .stat-item{padding:16px;}
+  .hero-scroll{display:none;}
+  footer .inner{flex-direction:column;gap:16px;text-align:center;}
 }
 </style>
 </head>
 <body>
 
-<nav>
-<div class="container">
-<a href="/" class="logo">Scale<span>Haus</span></a>
+<nav id="nav">
+<div class="inner">
+<a href="/" class="logo">Scale<mark>Haus</mark></a>
 <div class="nav-links">
-<a href="/">Home</a>
+<a href="#problem">The Problem</a>
+<a href="#how">How It Works</a>
+<a href="#bait">See It In Action</a>
 <a href="/privacy">Privacy</a>
 <a href="/terms">Terms</a>
 <a href="mailto:will@scalehaus.io" class="nav-cta">Get the Audit</a>
@@ -155,110 +186,201 @@ footer .copy { font-size: 13px; color: var(--gray-400); }
 </div>
 </nav>
 
-<section class="hero">
-<div class="container">
-<div class="hero-badge">✦ Independent Service Businesses</div>
-<h1>Your business isn't short on <span>customers</span>.<br>You're losing the ones you already earned.</h1>
-<p>Most agencies sell you more traffic. We find the leaks in your customer journey, seal them, and only then pour fuel. No retainers. No fluff. Just a system that works.</p>
-<div class="hero-buttons">
-<a href="mailto:will@scalehaus.io" class="btn btn-primary">Get the Free Audit</a>
-<a href="#process" class="btn btn-ghost">See How It Works</a>
+<section class="hero" id="top">
+<div class="hero-bg">
+<div class="orb"></div>
+<div class="orb"></div>
+<div class="orb"></div>
+<div class="hero-grid"></div>
 </div>
-<div class="hero-stats">
-<div class="hero-stat">
-<h3>01</h3>
-<p>Diagnose the leak</p>
+<div class="inner">
+<div class="hero-tag">✦ For Independent Service Businesses</div>
+<h1>You're not short on <span class="gradient">customers</span>.<br>You're losing the ones you <span class="outline">already earned</span>.</h1>
+<p>Most agencies sell you more traffic. We find the leaks in your customer journey, seal them, and only then pour fuel. No retainers. No fluff. Just a system that converts.</p>
+<div class="hero-btns">
+<a href="mailto:will@scalehaus.io" class="btn btn-primary">Get Your Free Audit <svg viewBox="0 0 16 16" fill="none"><path d="M5.5 3L10.5 8L5.5 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a href="#problem" class="btn btn-ghost">See How It Works</a>
 </div>
-<div class="hero-stat">
-<h3>02</h3>
-<p>Seal the largest</p>
+<div class="hero-scroll">
+<span>Scroll</span>
+<div class="scroll-dot"></div>
 </div>
-<div class="hero-stat">
-<h3>03</h3>
-<p>Pour fuel</p>
+</div>
+</section>
+
+<section class="problem" id="problem">
+<div class="inner">
+<div class="section-tag reveal">The Problem</div>
+<h2 class="section-h reveal">The bucket has <span style="color:#3884ff;">holes</span>.<br><span class="fade">Pouring more water just drains faster.</span></h2>
+<p class="section-p reveal">Every dollar you spend on traffic is wasted if your customer journey leaks. We prove where you're losing people before you spend another cent.</p>
+<div class="bucket-show">
+<div class="bucket-visual reveal">
+<div class="bucket-graphic">
+<div class="bucket-v normal">
+<div class="water" style="height:65%"></div>
+<div class="holes"><span style="top:20%;right:12px;"></span><span style="top:45%;right:8px;"></span><span style="top:65%;right:16px;"></span></div>
+<div class="label" style="bottom:-28px;">Your business today</div>
+</div>
+<span style="font-size:24px;color:rgba(255,255,255,.15);margin-bottom:32px;">→</span>
+<div class="bucket-v fixed">
+<div class="water" style="height:95%;background:linear-gradient(to top,rgba(56,132,255,.6),rgba(56,132,255,.2));"></div>
+<div class="label" style="bottom:-28px;">After ScaleHaus</div>
+</div>
+</div>
+<div class="bucket-caption">You're paying full price for leads you <strong>never actually meet</strong>.</div>
+</div>
+<div>
+<div class="problem-item reveal">
+<div class="icon red">⚠</div>
+<div>
+<h4>You don't know where people stop</h4>
+<p>Most businesses track clicks and calls. They don't track the gap between "interested" and "booked." That gap is where your money goes to die.</p>
+</div>
+</div>
+<div class="problem-item reveal">
+<div class="icon amber">⏱</div>
+<div>
+<h4>Your form inbox is a black hole</h4>
+<p>Inquiries at 8pm sit until morning. By 9am they've called two competitors. At $10k+ per case, every hour of silence costs real revenue.</p>
+</div>
+</div>
+<div class="problem-item reveal">
+<div class="icon blue">📊</div>
+<div>
+<h4>You're measuring activity, not results</h4>
+<p>Ad spend, form fills, phone calls — these are inputs, not outcomes. Without measuring transitions, you're guessing what works.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
 
-<section class="thesis" id="process">
-<div class="container">
-<div class="thesis-grid">
-<div class="thesis-visual">
-<h3>The bucket <span class="highlight">has holes</span>.</h3>
-<p>Pouring more traffic into a business that leaks customers is like filling a bucket with holes. It just drains faster and costs more.</p>
-<div class="bucket-animation">
-<div class="bucket" style="opacity:0.4">
-<div class="bucket-fill" style="height:80%"></div>
-<div class="bucket-hole bucket-h1"></div>
-<div class="bucket-hole bucket-h2"></div>
-<div class="bucket-hole bucket-h3"></div>
-<div class="bucket-label">Your business</div>
+<section class="stats reveal">
+<div class="inner">
+<div class="stat-item">
+<div class="stat-num"><span class="blue">01</span></div>
+<div class="stat-label">Find the leak — measure every step of the journey</div>
 </div>
-<div style="font-size:28px;color:var(--gray-500);margin-bottom:16px;">→</div>
-<div class="bucket" style="opacity:0.7">
-<div class="bucket-fill" style="height:95%"></div>
-<div class="bucket-label">After ScaleHaus</div>
+<div class="stat-item">
+<div class="stat-num"><span class="blue">02</span></div>
+<div class="stat-label">Seal the largest — fix the highest-impact constraint first</div>
 </div>
+<div class="stat-item">
+<div class="stat-num"><span class="blue">03</span></div>
+<div class="stat-label">Prove the fix — verify before moving to the next</div>
+</div>
+<div class="stat-item">
+<div class="stat-num"><span class="blue">04</span></div>
+<div class="stat-label">Pour fuel — scale only after the bucket holds</div>
 </div>
 </div>
-<div class="thesis-content">
-<div class="section-label">The Thesis</div>
-<h2 class="section-title">Most agencies sell you more water. We find the holes first.</h2>
-<p class="section-sub">"Don't advertise yet" is not a limitation. It's the single line that separates us from every agency you've ever hung up on.</p>
-<div class="highlight-quote">We measure every step of your customer journey, find where qualified people stop, fix the biggest leak first, and only then scale your traffic. The order is the pitch.</div>
+</section>
+
+<section class="how" id="how">
+<div class="inner">
+<div class="section-tag reveal">How It Works</div>
+<h2 class="section-h reveal">Three steps to <span style="color:#3884ff;">predictable growth</span>.<br><span class="fade">No software. No contracts. Just a system.</span></h2>
+<p class="section-p reveal">We don't sell you a tool or a retainer. We diagnose, fix, and only then scale. The order is the entire pitch.</p>
+<div class="how-grid">
+<div class="how-card reveal">
+<div class="glow"></div>
+<div class="num">01</div>
+<div class="ic">🔍</div>
+<h3>Find the Leak</h3>
+<p>We audit your entire customer journey — from the moment someone hears your name to the moment they hand over their card. Every transition is measured. Every gap is found.</p>
+</div>
+<div class="how-card reveal" style="transition-delay:.1s;">
+<div class="glow"></div>
+<div class="num">02</div>
+<div class="ic">🔧</div>
+<h3>Seal the Largest</h3>
+<p>One fix at a time. The highest-impact constraint, proven with data, fixed and verified before we touch anything else. No random changes. No guesswork.</p>
+</div>
+<div class="how-card reveal" style="transition-delay:.2s;">
+<div class="glow"></div>
+<div class="num">03</div>
+<div class="ic">🚀</div>
+<h3>Pour Fuel</h3>
+<p>Only when the bucket holds do we scale. Traffic, ads, referrals — every dollar tracked to revenue. You only spend more when you know every dollar converts.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section>
-<div class="container">
-<div class="section-label">How It Works</div>
-<h2 class="section-title">Three steps to predictable growth.</h2>
-<p class="section-sub">No complicated software. No long-term contracts. Just a repeatable system that fixes what's broken before you spend more money.</p>
-<div class="process-grid">
-<div class="process-card">
-<div class="icon-wrap">🔍</div>
-<div class="num">Step 01</div>
-<h3>Find the leak</h3>
-<p>We audit your entire customer journey — from the first click to the last dollar. Every step is measured, every gap is found. We prove the leak with your own numbers.</p>
+<section class="bait" id="bait">
+<div class="inner">
+<div class="section-tag reveal">See It In Action</div>
+<h2 class="section-h reveal">We prove the leak <span style="color:#3884ff;">before we pitch the fix</span>.<br><span class="fade">This is how we start every conversation.</span></h2>
+<div class="bait-show">
+<div class="bait-text">
+<div class="bait-quote reveal">
+<p>You're the guy celebrities go to for veneers. I respect that. But I filled out your contact form and it went to an inbox nobody checks fast enough. You're losing people you never even knew were interested.</p>
+<span class="from">— The text that started a conversation with Dr. Kevin Sands, Beverly Hills</span>
 </div>
-<div class="process-card">
-<div class="icon-wrap">🔧</div>
-<div class="num">Step 02</div>
-<h3>Seal the largest</h3>
-<p>We fix the single highest-impact constraint first. One thing at a time, measured and proven before we move to the next. No guesswork, no assumptions.</p>
+<p class="bait-context reveal">We pose as a real customer to measure your response time. Their own behavior becomes the proof. No guesswork. No assumptions. Just the truth about where your business leaks.</p>
 </div>
-<div class="process-card">
-<div class="icon-wrap">🚀</div>
-<div class="num">Step 03</div>
-<h3>Pour fuel</h3>
-<p>Only after the bucket holds do we scale. Traffic, ads, referrals — poured into a system that actually converts. Every dollar of spend is tracked to revenue.</p>
+<div class="bait-visual reveal">
+<div class="bait-phone">
+<div class="msg in" style="max-width:90%;">
+<strong style="font-weight:600;">Dr. Kevin Sands</strong><br>
+Hello! This is Dr. Sands. Our office just tried calling you.
+</div>
+<div class="msg out">
+Sorry I missed your call. I put together a quick rundown of what I found on your site. Want me to send it over?
+</div>
+<div class="msg in">
+Sands' Office — We apologize for the delay. Can you confirm what site you submitted a form on?
+</div>
+<div class="status"><span class="dot"></span> Real conversation — Dr. Sands replied within 8 minutes</div>
+</div>
 </div>
 </div>
 </div>
 </section>
 
-<section class="cta-section">
-<div class="container">
-<div class="section-label">Start Here</div>
-<h2 class="section-title">Ready to find your leaks?</h2>
-<p class="section-sub">The first step is a free audit. We'll show you exactly where your business is losing customers and what to fix first. No commitment. No pitch.</p>
-<a href="mailto:will@scalehaus.io" class="btn btn-primary">Get Your Free Audit</a>
+<section class="cta">
+<div class="cta-bg"><div class="orb"></div></div>
+<div class="inner">
+<h2 class="reveal">Ready to find your leaks?</h2>
+<p class="reveal">The first step is a free audit. We'll show you exactly where your business is losing customers and what to fix first. No commitment. No pitch. Just the truth.</p>
+<a href="mailto:will@scalehaus.io" class="btn btn-primary reveal" style="font-size:16px;padding:16px 36px;">Get Your Free Audit <svg viewBox="0 0 16 16" fill="none" style="width:18px;height:18px;"><path d="M5.5 3L10.5 8L5.5 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 </section>
 
 <footer>
-<div class="container">
-<div class="logo" style="font-size:16px">Scale<span>Haus</span></div>
+<div class="inner">
+<a href="/" class="logo" style="font-size:15px;font-weight:600;">Scale<mark>Haus</mark></a>
 <div class="links">
 <a href="/privacy">Privacy Policy</a>
 <a href="/terms">Terms of Service</a>
+<a href="mailto:will@scalehaus.io">will@scalehaus.io</a>
 </div>
 <div class="copy">&copy; 2026 ScaleHaus. All rights reserved.</div>
 </div>
 </footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 60);
+  lastScroll = y;
+}, {passive: true});
+
+// Reveal on scroll
+const reveal = () => {
+  const els = document.querySelectorAll('.reveal');
+  els.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) el.classList.add('visible');
+  });
+};
+window.addEventListener('scroll', reveal, {passive: true});
+window.addEventListener('load', reveal);
+</script>
 
 </body>
 </html>
